@@ -1,0 +1,114 @@
+/* =========================================================================
+   SIESTARIA — hoja de estilos compartida
+   -------------------------------------------------------------------------
+   Casi nunca vas a necesitar tocar este archivo. Para cambiar TEXTOS,
+   editá los .html (index.html, about.html, contact.html).
+   Si querés cambiar el color de fondo, el color del texto o el tamaño del
+   título, los valores están aquí abajo, en :root. Cambiá solo lo que está
+   después de los dos puntos.
+   ========================================================================= */
+
+:root {
+  --bg:        #ffffff;   /* color de fondo de la página            */
+  --ink:       #000000;   /* color del texto                        */
+  --hover:     #777777;   /* color de los links al pasar el mouse   */
+  --margin:    1rem;      /* margen alrededor de todo el contenido  */
+
+  /* Tamaño del título "Siestaria". Se adapta solo a la pantalla:
+     mínimo / ideal / máximo. */
+  --title-size: clamp(2.4rem, 9vw, 7rem);
+
+  /* Tipografía: grotesca neutra, parecida a la Diatype del sitio original.
+     Si algún día licenciás Diatype, agregá su @font-face y poné su nombre
+     primero en esta lista. */
+  --font: "Helvetica Neue", Helvetica, Arial, "Inter", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  font-weight: 400;
+  line-height: 1.25;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover { color: var(--hover); }
+
+/* ---- Estructura de página: ocupa toda la altura de la ventana --------- */
+.page {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  padding: var(--margin);
+}
+
+/* ---- Fila superior: título a la izquierda, navegación a la derecha ---- */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.title {
+  font-size: var(--title-size);
+  font-weight: 400;
+  line-height: 0.95;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.nav {
+  text-align: right;
+  font-size: 1rem;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+.nav a { display: block; }
+
+/* ---- Zona de contenido (páginas About / Contact) --------------------- */
+.content {
+  max-width: 46rem;
+  margin-top: 2.5rem;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+.content p { margin: 0 0 1em; }
+.content h2 {
+  font-size: 1.05rem;
+  font-weight: 400;
+  margin: 1.6em 0 0.3em;
+}
+.content a { text-decoration: underline; text-underline-offset: 2px; }
+
+/* ---- Archivo, anclado abajo (solo en la home) ------------------------ */
+.archive {
+  margin-top: auto;          /* empuja el bloque al fondo de la página */
+  padding-top: 2rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* ---- Pantallas chicas ------------------------------------------------- */
+@media (max-width: 600px) {
+  .top { flex-direction: column; gap: 1.25rem; }
+  .nav { text-align: left; }
+  .nav a { display: inline; margin-right: 1rem; }
+}
+
+/* ---- Accesibilidad: respetar "reducir movimiento" -------------------- */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
