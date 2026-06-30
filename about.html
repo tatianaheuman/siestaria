@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — Siestaria</title>
-  <meta name="description" content="About Siestaria.">
+  <meta name="description" content="About Siestaria — what, when and why.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,47 +12,111 @@
   <main class="page">
 
     <div class="top">
-      <!-- El título es un link de vuelta a la home -->
       <h1 class="title"><a href="index.html">Siestaria</a></h1>
-
       <nav class="nav">
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <a href="https://drive.google.com/file/d/1pqweW9opYgPdTk3YhVMdi3u0oH34Bf8V/view?usp=sharing" target="_blank" rel="noopener">Portfolio</a>
+        <a href="https://drive.google.com/drive/folders/1nQkKx8XwaXW-eYDv5Q3-4FoZp7vA3xDc" target="_blank" rel="noopener">Portfolio</a>
       </nav>
     </div>
 
-    <!-- ===================================================================
-         TEXTO DE "ABOUT"
-         Este es un texto de arranque (en inglés, como el resto del sitio).
-         Reemplazalo por el que vos quieras. Cada párrafo va entre <p> y </p>.
-         =================================================================== -->
-    <div class="content">
-
-      <p>Siestaria is an ongoing artistic research project by Tatiana Heuman
-      and Florencia Curci. It considers radical rest and listening in dreams
-      as forms of resistance, and the oneiric realm as a refuge for the parts
-      of ourselves that refuse to adjust to the logics of efficiency and
-      optimization.</p>
-
-      <p>The project takes many forms — workshops, installations, dream
-      concerts — built around dream listening, dream translation and oneiric
-      cartographies. Rather than treating rest as a pause or an absence,
-      Siestaria proposes repose as a generative ground for reimagining how we
-      live, relate and resist together.</p>
-
-      <p>Tatiana and Florencia met as drummers in the experimental music
-      underground of Buenos Aires, and have collaborated across constellations
-      such as the transfeminist sound platform #VIVAS. Siestaria has been
-      presented at HKW Berlin, CASo Buenos Aires, and Festival Tsonami,
-      Valparaíso, among others.</p>
-
-      <!-- Para agregar otro párrafo, copiá una línea como esta:
-           <p>tu texto acá</p> -->
-
+    <!-- ===== PESTAÑAS =====
+         Cada botón abre una sección. La que está activa se ve sólida;
+         las demás, tenues. No hace falta tocar nada de esto para editar
+         textos: el texto de cada pestaña está más abajo, en su <section>. -->
+    <div class="tabs">
+      <button class="tab-btn active" data-target="what">What?</button>
+      <button class="tab-btn" data-target="when">When?</button>
+      <button class="tab-btn" data-target="why">Why?</button>
+      <button class="tab-btn" data-target="sources">Sources</button>
+      <button class="tab-btn" data-target="related">Related Projects</button>
     </div>
 
+    <!-- ===================== CONTENIDO DE CADA PESTAÑA ===================== -->
+
+    <!-- ---------- WHAT? ---------- -->
+    <section class="panel active" id="what">
+      <div class="body">
+        <p>Siestaria is an ongoing artistic research project that can take various forms, including workshops, installations, and dream concerts. The project focuses on the ideas of dream listening, dream translation, and oneiric cartographies. Siestaria is constantly evolving and adapting to present needs, serving as a dynamic and intimate space.</p>
+        <p>The word &lsquo;siestaria&rsquo; comes from the noun siesta (nap). There are some &lsquo;siestarios&rsquo; scattered in some parts of the world, spaces in the middle of the city where people can sleep for a while. We modified the term to feminine, with a final &lsquo;a&rsquo; to differentiate our idea of how a communal resting and dreaming space could be. We associate the feminine with care and connection between people, with building a space together.</p>
+        <p>We understand that dreams are sensitive material and that although there is a relationship with therapeutic work it is not what we focus on and our training does not respond to these needs. We recognize the immense power of dreams as a source of creativity and social significance, as well as valuable historical artifacts that offer a glimpse into a particular era. We do not usually work with the story of the dream in its literal form, but we try to put the verbal aspect in the background.</p>
+      </div>
+    </section>
+
+    <!-- ---------- WHEN? ---------- -->
+    <section class="panel" id="when">
+      <div class="body">
+        <p>The experience of confinement during the COVID-19 pandemic sparked a keen interest in dreams and the act of listening in them. We delved into the Deep Listening&reg; practice of composer Pauline Oliveros and the works of playwright IONE, particularly her texts on Listening in Dreams. These sources inspired us to explore the interplay between sound, dreams and space, leading to the creation of dream maps, the study of <a href="https://www.unseen.help/heuman_en/" target="_blank" rel="noopener">transitional states of sleep (hypnopompic/hypnagogic)</a>, and engaging in the <a href="https://lumpenstation.art/archive/lumpenconnexions/show/youwouldnotbejustanornament" target="_blank" rel="noopener">dialogue with dreams as entities</a>.</p>
+        <p><a href="buenos-aires.html">Siestaria, as we know it today, officially started the first week of February 2023 at LAR (Local de Artes Recientes)</a>, a gallery located in La Paternal, Buenos Aires, Argentina. Our first intention was to transform the space into an uncertain situation of a clinic, sanatorium or spa, offering time and space to explore different practices of sharing dreams, listening, being and doing without effort, and try creating a place for collective resting. We developed the proposal to address our constant struggle with existential questions and feelings of purposelessness. We required a common area to exchange tools in order to encourage accessibility and independence. Therefore, we decided to use dreams as the primary component for constructing the space, as it serves as a catalyst. Our belief in the potential of the dream realm, where we are free to act in irrational ways, and where several truths can coexist, motivated this decision.</p>
+      </div>
+    </section>
+
+    <!-- ---------- WHY? ---------- -->
+    <section class="panel" id="why">
+      <div class="body">
+        <p>We find it important to create spaces where people can feel and express themselves without having to apologize or provide explanations. These spaces can also help establish meaningful connections with others and the world, to rehearse listening to each other and what is around us. We are motivated by shaping encounters that build meaning and inclusive knowledge by manifesting availability towards the subjectivity that each one unveils through their dream. We feel the need and are looking for ways to ritualize, rehearsing the possibility of considering the dream as a concrete entity, a character, a body that can act just like us, an assembled but paranoid creature in which threads of memories tangle and untangle. We could invoke it as a way to break away from the constant pressure to always be productive and efficient. We see dreaming and sleep as potential moments of synchronization and equality. One way of expanding the simultaneousness of the dream state could be the practice of non-verbal dream translation through various means and the sharing of them, to design ways to unite and transmute our dreams. Precisely because rituals seem to be disappearing, it is necessary to find new ways of telling and connecting stories.</p>
+        <p>In the beginning of this project, we contemplated the complexities surrounding the relationship between process and outcome in artistic endeavor. Specifically, we explored the links, entanglements, and potential conflicts that may arise between the two. &ldquo;Why do I do what I do? Why do we do what we do? How do we investigate it?&rdquo; We reconsider the concepts of exposure and vulnerability and explore the potential of a stage. As artists, what are our responsibilities and what do we value? In the realm of artistic expression, we explored methods for dismantling stereotypes and addressing the emotional impact of inadequate statements or affirmations such as: &ldquo;I am not good enough to or you are not good enough to. If I am joyful, my work is not good enough or deep enough. You must be in crisis to make good work. I am not being productive enough.&rdquo; Engaging in the creative process can be mentally and physically taxing, which is why taking breaks and allowing ourselves to dream is essential. Sleeping helps us recharge and tap into our subconscious without the constraints of logical thinking.</p>
+        <p>Upon delving into the utilization of present-day production in the realm of art, we swiftly shifted our attention to an array of significant inquiries and terms that were pivotal in constructing a collective encounter. Our proposal is based on the belief that discussing rest and sleep and sharing our dreams, is crucial for building collective awareness. This awareness can help us reject abusive systems that force us into excessive productivity and prevent us from recognizing fatigue.</p>
+        <p>These are some key questions and themes we address, (but we have a lot more): What is rest? What forms of rest are there? Do we rest when we dream? What does rest mean for me and my body? How are my perceptions transformed when I sleep and when I dream? Listening to sleep. Singing oneself to sleep. Sleep as an ally, as a collaborating entity. Asking the dream. Dream diaries. Dreams as an archive. Dreams as historical documents. Dreams and identity. Collectivizing dreams, collective dreams, public dreams&hellip; Non-verbal translations of the dream. Dreams and sleep of non-human beings.</p>
+      </div>
+    </section>
+
+    <!-- ---------- SOURCES ---------- -->
+    <section class="panel" id="sources">
+      <div class="body">
+        <p class="entry">Beradt C (1968) The Third Reich of Dreams. Chicago: Quadrangle Books.</p>
+        <p class="entry"><a href="https://dreams.ucsc.edu/NCTD/Neurocognitive_Theory_of_Dreaming_SNC2019.pdf" target="_blank" rel="noopener">Domhoff GW (2019) The Neurocognitive Theory of Dreaming: The Where, How, When, What, and Why of Dreams.</a></p>
+        <p class="entry"><a href="https://lobosuelto.com/el-sueno-es-al-futuro-lo-que-el-azogue-al-espejo-lila-maria-feldman/" target="_blank" rel="noopener">Feldman ML (2018) El sue&ntilde;o es al futuro lo que el azogue al espejo. Lobo Suelto!</a></p>
+        <p class="entry"><a href="https://www.pagina12.com.ar/286448-el-mal-dormir" target="_blank" rel="noopener">Forn J (2020) El mal dormir: Un problema que nos aqueja a todos.</a></p>
+        <p class="entry">Garaudel DL, Jocks HN, Nilsson E, Garaudel D, Jocks HN and Kliefoth M (2022) The Collective Eye in conversation with Ruangrupa: Thoughts on collective practice. Berlin: Distanz Verlag.</p>
+        <p class="entry">Han BC (2020) The Disappearance of Rituals: A Topology of the Present. Cambridge: Polity Press.</p>
+        <p class="entry">Hayman R (1993) Listening to Dreams: A Project for Middle Ear Muscle Activity Audio Level Telemetry. MedArts International. Cappella books.</p>
+        <p class="entry">Hersey T (2022) Rest Is Resistance: A Manifesto. Boston: Little, Brown Spark.</p>
+        <p class="entry"><a href="http://www.revgeosur.udec.cl/?p=163" target="_blank" rel="noopener">Hirt I (2012) Mapeando sue&ntilde;os/so&ntilde;ando mapas: entrelazando conocimientos geogr&aacute;ficos ind&iacute;genas y occidentales.</a></p>
+        <p class="entry">IDAS (2021) Rituales para realizar escrituras afectivas: Investigaci&oacute;n y Di&aacute;logo para la Autogesti&oacute;n. Mexico: Social Universidad del Sur.</p>
+        <p class="entry">IONE (2005) Listening in Dreams: A Compendium of Sound Dreams, Meditations and Rituals for Deep Dreamers. iUniverse.</p>
+        <p class="entry"><a href="https://www.youtube.com/watch?v=S8qFw2jKtIE" target="_blank" rel="noopener">Rolnik S (2015) Micropol&iacute;ticas del pensamiento: Deconstruyendo el inconsciente colonial.</a></p>
+        <p class="entry">Oliveros P (2005) Deep Listening: A Composer&rsquo;s Sound Practice. Bloomington: iUniverse.</p>
+        <p class="entry"><a href="https://www.dreamauction.org/" target="_blank" rel="noopener">Park B (2021) Dream Auction.</a></p>
+        <p class="entry"><a href="https://www.redalyc.org/jatsRepo/4559/455960135009/index.html" target="_blank" rel="noopener">Paz Reverol CL (2017) Make Dreams: A Wayuu Perspective. EntreDiversidades. Revista de ciencias sociales y humanidades.</a></p>
+        <p class="entry">Rolnik S (2019) Esferas de la insurrecci&oacute;n: Apuntes para descolonizar El Inconsciente. Buenos Aires: Ediciones Tinta Lim&oacute;n.</p>
+        <p class="entry"><a href="https://www.psychotherapy.net/article/expressive-art-therapy" target="_blank" rel="noopener">Rogers N (2016) The Path to Wholeness: Person-Centered Expressive Arts Therapy.</a></p>
+        <p class="entry"><a href="http://dreamresearch.net/" target="_blank" rel="noopener">Schneider A, Domhoff GW (2023) The Quantitative Study of Dreams.</a></p>
+        <p class="entry">Siruela J (2010) El Mundo Bajo Los P&aacute;rpados. Vila&uuml;r: Ediciones Atlanta.</p>
+        <p class="entry"><a href="https://www.cabinetmagazine.org/issues/67/spellberg1.php" target="_blank" rel="noopener">Spellberg M (2020) On Dream Sharing and Its Purpose: The social contract of sensuous imagining. Cabinet.</a></p>
+        <p class="entry"><a href="https://www.cabinetmagazine.org/kiosk/spellberg_matthew_8_february_2022.php" target="_blank" rel="noopener">Spellberg M (2022) Prisoners of the Dream: Inception and Coors, capitalism and pandemic dreaming. Cabinet.</a></p>
+        <p class="entry"><a href="https://www.jstor.org/stable/3134476" target="_blank" rel="noopener">Stewart C (2002) Erotic dreams and nightmares from antiquity to the present. The Journal of the Royal Anthropological Institute 8: 279&ndash;309.</a></p>
+        <p class="entry"><a href="https://dreams.umwblogs.org/files/2011/10/Introduction-Dreaming-as-an-Object-of-Anthropological-Analysis.pdf" target="_blank" rel="noopener">Stewart C (2004) Introduction: Dreaming as an Object of Anthropological Analysis. Dreaming 14(2-3): 75-82.</a></p>
+        <p class="entry"><a href="https://aries.aibr.org/storage/antropologia/netesp/numeros/1003/100303.pdf" target="_blank" rel="noopener">Tob&oacute;n M (2015) Dreams as ethnographic tools. AIBR, Revista de Antropologia Iberoamericana 10(03): 331-353.</a></p>
+        <p class="entry"><a href="https://revistas.uniandes.edu.co/index.php/antipoda/article/view/1769/67" target="_blank" rel="noopener">Vargas JCN (2007) Sue&ntilde;o, realidad y conocimiento entre los ette de colombia, Antipoda 5: 293&ndash;315.</a></p>
+        <p class="entry">Wesseling J and Cramer F (2022) Making Matters: A Vocabulary for Collective Arts. Amsterdam: Valiz.</p>
+      </div>
+    </section>
+
+    <!-- ---------- RELATED PROJECTS ---------- -->
+    <section class="panel" id="related">
+      <div class="body">
+        <p class="entry"><a href="https://www.thenapministry.com/" target="_blank" rel="noopener">Hersey T (2023). The Nap Ministry &ndash; Rest is Resistance.</a><span class="quote">&ldquo;Founded by artist and theologian Tricia Hersey in 2016, The Nap Ministry evolved from Transfiguration, a performance where the artist explored reparations, resistance, Black Liberation Theology, and the spiritual practice of rest, and how it can be used as a direct line to our ancestors.&rdquo;</span></p>
+        <p class="entry"><a href="https://oneiricspace.info/" target="_blank" rel="noopener">Li C (2019) Oneiric Space.</a><span class="quote">&ldquo;Oneiric Space is an ever-evolving research and publishing practice exploring the interplay between dreams and waking life at an individual and collective level. Through conversations and collaborations, the project delves into the potential of dreams and dreaming to generate new patterns of thinking, being, and understanding.&rdquo;</span></p>
+        <p class="entry"><a href="https://www.dreamauction.org/" target="_blank" rel="noopener">Park B (2021) Dream Auction.</a><span class="quote">&ldquo;Dream Auction is an umbrella for a series of works exploring the Korean practice of buying and selling dreams.&rdquo;</span></p>
+        <p class="entry"><a href="https://www.dreambank.net/" target="_blank" rel="noopener">Schneider A and Domhoff WG (n.d.). DreamBank.</a><span class="quote">&ldquo;The DreamBank is a collection of over 20,000 dream reports. The reports come from a variety of different sources and research studies &mdash; but NOT from dream-collecting Web sites &mdash; from people ages 7 to 74.&rdquo;</span></p>
+        <p class="entry"><a href="https://www.museumofdreams.org/" target="_blank" rel="noopener">The Faculty of Information &amp; Media Studies (2017). The Museum of Dreams.</a><span class="quote">&ldquo;The Museum of Dreams is a non-profit research hub dedicated to exploring the social and political significance of dream life. We work with artists, students, activists, and cultural institutions to cultivate, collect, and creatively work with dreams from both the historical record and contemporary life. Founded in 2017, the Museum provides a platform for critical conversations and storytelling projects.&rdquo;</span></p>
+      </div>
+    </section>
+
   </main>
+
+  <!-- Pequeño script que hace funcionar las pestañas. No necesitás tocarlo. -->
+  <script>
+    document.querySelectorAll('.tab-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
+        document.querySelectorAll('.panel').forEach(function (p) { p.classList.remove('active'); });
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.target).classList.add('active');
+      });
+    });
+  </script>
 
 </body>
 </html>
