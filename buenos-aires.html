@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Buenos Aires — Siestaria</title>
   <meta name="description" content="Documentation of the first Siestaria at LAR, Buenos Aires (February 2023).">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,36 +14,54 @@
 
     <div class="top">
       <h1 class="title"><a href="index.html">Siestaria</a></h1>
-      <!-- En esta página, arriba a la derecha va el rótulo "Buenos Aires"
-           (en lugar del menú). El título "Siestaria" lleva de vuelta a la home. -->
       <div class="nav"><span>Buenos Aires</span></div>
     </div>
 
     <div class="doc">
 
-      <img src="ba-photo1.png" alt="Participants drawing dream maps on the floor at LAR, Buenos Aires">
+      <!-- ===== SLIDESHOW A: fotos de las sesiones (pasan solas) =====
+           Para agregar/quitar fotos, copiá o borrá una línea <img>. La primera
+           lleva class="active". Cambiá data-interval (en milisegundos) para que
+           pasen más rápido o más lento. -->
+      <div class="slideshow ratio-photo" data-mode="auto" data-interval="3500">
+        <img class="active" src="ba-doc-01.png" alt="Siestaria at LAR, Buenos Aires — documentation 1">
+        <img src="ba-doc-02.png" alt="Siestaria at LAR, Buenos Aires — documentation 2">
+        <img src="ba-doc-03.png" alt="Siestaria at LAR, Buenos Aires — documentation 3">
+        <img src="ba-doc-04.png" alt="Siestaria at LAR, Buenos Aires — documentation 4">
+        <img src="ba-doc-05.png" alt="Siestaria at LAR, Buenos Aires — documentation 5">
+        <img src="ba-doc-06.png" alt="Siestaria at LAR, Buenos Aires — documentation 6">
+        <img src="ba-doc-07.png" alt="Siestaria at LAR, Buenos Aires — documentation 7">
+        <img src="ba-doc-08.png" alt="Siestaria at LAR, Buenos Aires — documentation 8">
+        <img src="ba-doc-09.png" alt="Siestaria at LAR, Buenos Aires — documentation 9">
+        <img src="ba-doc-10.png" alt="Siestaria at LAR, Buenos Aires — documentation 10">
+        <img src="ba-doc-11.png" alt="Siestaria at LAR, Buenos Aires — documentation 11">
+      </div>
 
       <p>Here is a compilation of documentation for the initial Siestaria that took place in LAR (Local de Artes Recientes) in Buenos Aires, Argentina where we were hosted by Bel&eacute;n Coluccio and Lucas Martinelli. A group of approximately 15 people were invited to participate. To kick off our initial trial, we opted to invite individuals we were already acquainted with and who we believed would be interested in taking part. We considered it important to follow this approach because some members of the group already knew each other, which created a sense of support and trust.</p>
 
       <p>During the sessions, we made a series of photogrammetries, also known as 3D scans, as a method of documentation complementary to traditional audio-visual media as a way of linking the following editions of Siestaria into a virtual map.</p>
 
-      <img src="ba-scan.png" alt="3D scan / photogrammetry of the Siestaria installation space">
+      <!-- ===== SLIDESHOW B: escaneos 3D (se pasan con un clic sobre la imagen) ===== -->
+      <div class="slideshow ratio-scan" data-mode="click">
+        <img class="active" src="scan1.png" alt="Siestaria — 3D scan 1">
+        <img src="scan2.png" alt="Siestaria — 3D scan 2">
+        <img src="scan3.png" alt="Siestaria — 3D scan 3">
+        <img src="scan4.png" alt="Siestaria — 3D scan 4">
+        <span class="counter">1 / 4</span>
+      </div>
 
       <p>The psychologist and somatic practitioner Rosi Flaiban was invited to lead the warm-up sessions, while cinematographer and photographer Vareila Mairanga was tasked with capturing the event through video and photography. Image and sound designer Tatiana Cuoco skilfully managed the 3D scanning and editing of the audiovisual documentation. These three individuals were vital members of our team; they actively participated in the Siestaria process by engaging in dream work and various exercises.</p>
 
-      <!-- VIDEO 1. Para cambiarlo, reemplazá el código después de "embed/" -->
       <div class="video">
         <iframe src="https://www.youtube-nocookie.com/embed/38-nCkhMNco" title="Siestaria BsAs — video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
       </div>
 
       <p>The activities took place over two afternoons on the weekend to make attendance more convenient for the participants. Each meeting lasted roughly two and a half hours. We spaced the meetings out over two days, with a night in between, to allow time to reflect on what had been accomplished and to consider the many proposals we had to offer.</p>
 
-      <!-- VIDEO 2 -->
       <div class="video">
         <iframe src="https://www.youtube-nocookie.com/embed/yoBcn42ONa0" title="Siestaria BsAs II" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
       </div>
 
-      <!-- CRÉDITOS -->
       <div class="credits">
         <h2>Team</h2>
         <p>Concept &amp; facilitation &#8212; <a href="https://www.tatianaheuman.com/" target="_blank" rel="noopener">Tatiana Heuman</a> &amp; <a href="https://florenciacurci.com/" target="_blank" rel="noopener">Florencia Curci</a></p>
@@ -57,6 +76,27 @@
     </div>
 
   </main>
+
+  <!-- Script de los slideshows. No necesitás tocarlo. -->
+  <script>
+    document.querySelectorAll('.slideshow').forEach(function (box) {
+      var imgs = box.querySelectorAll('img');
+      var counter = box.querySelector('.counter');
+      var i = 0;
+      function show(n) {
+        imgs[i].classList.remove('active');
+        i = (n + imgs.length) % imgs.length;
+        imgs[i].classList.add('active');
+        if (counter) counter.textContent = (i + 1) + ' / ' + imgs.length;
+      }
+      if (box.dataset.mode === 'auto') {
+        var ms = parseInt(box.dataset.interval || '3500', 10);
+        setInterval(function () { show(i + 1); }, ms);
+      } else {
+        box.addEventListener('click', function () { show(i + 1); });
+      }
+    });
+  </script>
 
 </body>
 </html>

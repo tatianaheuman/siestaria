@@ -10,11 +10,14 @@ está entre etiquetas.
 |---|---|
 | `index.html` | Home: título, navegación, imagen central (escaneo 3D) y Archive. |
 | `about.html` | About: pestañas What? / When? / Why? / Sources / Related Projects. |
-| `buenos-aires.html` | Página de documentación de la primera Siestaria en LAR, Buenos Aires. |
+| `buenos-aires.html` | Documentación de la primera Siestaria en LAR: slideshow de fotos (pasan solas), texto, slideshow de escaneos 3D (pasan al clic), videos y créditos. |
 | `contact.html` | Contact (el mail). |
-| `styles.css` | Diseño: colores, tipografía, cursor, tamaños. |
+| `styles.css` | Diseño: colores, tipografía, cursor, tamaños, slideshows. |
+| `favicon.svg` | El ícono (nube) que aparece en la pestaña del navegador. |
+| `SIESTARIA-portfolio-EN.pdf` | El portfolio en PDF. El link "Portfolio" lo abre. |
 | `home-collage.png` | Imagen central de la home. |
-| `ba-photo1.png`, `ba-scan.png` | Imágenes de la página Buenos Aires. |
+| `ba-doc-01.png` … `ba-doc-11.png` | Fotos del slideshow de Buenos Aires. |
+| `scan1.png` … `scan4.png` | Escaneos 3D del slideshow de Buenos Aires. |
 
 > Las imágenes de la página Buenos Aires (`ba-photo1.png`, `ba-scan.png`) las
 > recorté de tus capturas, así que están en calidad media. Cuando quieras, pasame
@@ -34,7 +37,14 @@ Cambiás solo lo de adentro y guardás. No borres las etiquetas. Dejé comentari
 
 - **Mail de contacto:** en `contact.html`, reemplazá `siestariazzz@gmail.com`
   (aparece dos veces en la misma línea).
-- **Link del Portfolio:** está en las páginas dentro de `href="https://drive.google.com/…"`.
+- **Link del Portfolio:** ahora abre el archivo `SIESTARIA-portfolio-EN.pdf` que
+  está en el sitio. Para actualizarlo, reemplazá ese PDF por uno nuevo con el
+  mismo nombre (o cambiá el `href` en `index.html` y `contact.html`).
+- **Slideshows (Buenos Aires):** las fotos que pasan solas son los `ba-doc-…png`
+  (en el bloque `<div class="slideshow" data-mode="auto" …>`); los escaneos que
+  pasan al clic son los `scan…png` (`data-mode="click"`). Para agregar o quitar
+  imágenes, copiá o borrá una línea `<img …>` dentro del bloque. La velocidad del
+  automático se cambia en `data-interval` (en milisegundos).
 - **Videos de YouTube** (página Buenos Aires): en `buenos-aires.html`, reemplazá
   el código que va después de `embed/`. Ejemplo: para el video
   `youtube.com/watch?v=ABC123`, poné `…/embed/ABC123`.
@@ -68,10 +78,11 @@ reemplazar los archivos por estos nuevos:
 
 1. Entrá a tu repo: `https://github.com/tatianaheuman/siestaria`
 2. Tocá **Add file → Upload files**.
-3. Arrastrá **los 8 archivos** de esta carpeta (los 4 `.html`, el `.css` y las 3
-   imágenes `.png`) — sueltos, no la carpeta.
-   - Los que ya existían (index, about, contact, styles) se reemplazan solos.
-   - Los nuevos (buenos-aires.html y las imágenes) se agregan.
+3. Arrastrá **todos los archivos** de esta carpeta (los 4 `.html`, el `.css`,
+   el `favicon.svg`, el PDF y todas las imágenes `.png`) — sueltos, no la carpeta.
+   - Los que ya existían se reemplazan solos; los nuevos se agregan.
+   - Si algún archivo viejo ya no está en esta carpeta (por ejemplo `ba-photo1.png`
+     o `ba-scan.png`), podés borrarlo del repo desde GitHub, pero no molesta si queda.
 4. Abajo, botón verde **Commit changes**.
 5. En ~1 minuto, GitHub Pages se actualiza solo. Refrescá tu sitio en
    `https://tatianaheuman.github.io/siestaria/` y vas a ver los cambios.

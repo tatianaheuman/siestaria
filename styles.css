@@ -16,6 +16,9 @@
   --label-size:  clamp(1.9rem, 6.5vw, 4.6rem); /* What? When? Why? ...   */
 
   --font: "Helvetica Neue", Helvetica, Arial, "Inter", system-ui, sans-serif;
+
+  /* Cursor: flecha de línea lima, al doble de tamaño. Punta arriba-izquierda. */
+  --cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2276%22%20height%3D%2276%22%20viewBox%3D%220%200%2038%2038%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23ecfeda%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M5%205%20L30%2030%22%2F%3E%3Cpath%20d%3D%22M5%2019%20L5%205%20L19%205%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") 10 10, auto;
 }
 
 * { box-sizing: border-box; }
@@ -30,9 +33,12 @@ body {
   line-height: 1.22;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Cursor: flecha de línea, color lima. Punta arriba a la izquierda. */
-  cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2238%22%20height%3D%2238%22%20viewBox%3D%220%200%2038%2038%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23ecfeda%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M5%205%20L30%2030%22%2F%3E%3Cpath%20d%3D%22M5%2019%20L5%205%20L19%205%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") 5 5, auto;
+  /* Flecha lima en toda la página. */
+  cursor: var(--cursor);
 }
+
+/* La flecha se mantiene también sobre links y botones (no aparece la manito). */
+a, button, .tab-btn { cursor: var(--cursor); }
 
 a { color: var(--link); text-decoration: none; }
 a:hover { text-decoration: underline; text-underline-offset: 3px; }
@@ -108,10 +114,15 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 .tabs {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.2rem 2.4rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
   margin: 3rem 0 2.4rem;
 }
+.tabs-left  { text-align: left; }
+.tabs-right { text-align: right; }
+.tabs-left .tab-btn,
+.tabs-right .tab-btn { display: block; }
 .tab-btn {
   font-family: inherit;
   font-size: var(--tab-size);
@@ -141,7 +152,8 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .entry .quote { display: block; margin-top: 0.3em; }
 
 @media (max-width: 700px) {
-  .tabs { gap: 0.1rem 1.4rem; margin: 2rem 0 1.6rem; }
+  .tabs { flex-direction: column; gap: 0.1rem; margin: 2rem 0 1.6rem; }
+  .tabs-right { text-align: left; }
 }
 
 /* =======================================================================
@@ -170,22 +182,22 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
    videos y texto.
    ===================================================================== */
 .doc {
-  max-width: 60rem;
+  max-width: 72rem;
   margin: 3.5rem auto 0;
-  font-size: 1.15rem;
-  line-height: 1.4;
+  font-size: 2.875rem;   /* 2,5x del tamaño anterior */
+  line-height: 1.2;
 }
 .doc > * { margin: 0 auto 2.2rem; }
-.doc p { max-width: 46rem; }
+.doc p { max-width: none; }
 .doc img {
   display: block;
-  width: 100%;
+  width: 75%;            /* 25% más chicas */
   height: auto;
 }
-/* Video de YouTube embebido, responsive 16:9 */
+/* Video de YouTube embebido, responsive 16:9, 25% más chico */
 .video {
   position: relative;
-  width: 100%;
+  width: 75%;
   aspect-ratio: 16 / 9;
   background: rgba(0,0,0,0.08);
 }
@@ -197,6 +209,37 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   border: 0;
 }
 /* Bloque de créditos */
-.credits { max-width: 46rem; }
-.credits h2 { font-size: 1.15rem; font-weight: 400; margin: 0 0 0.6em; }
-.credits p { margin: 0 0 0.35em; }
+.credits { max-width: none; font-size: 2.875rem; line-height: 1.2; }
+.credits h2 { font-size: 2.875rem; font-weight: 400; margin: 0 0 0.4em; }
+.credits p { margin: 0 0 0.4em; }
+
+/* ---- Slideshows (fotos que pasan) ---- */
+.slideshow {
+  position: relative;
+  width: 75%;               /* mismo tamaño que las fotos/videos */
+  margin: 0 auto 2.2rem;
+}
+.slideshow.ratio-photo { aspect-ratio: 3 / 2; }
+.slideshow.ratio-scan  { aspect-ratio: 16 / 10; }
+.slideshow img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.slideshow img.active { opacity: 1; }
+/* El slideshow que se pasa con clic muestra un contador */
+.slideshow .counter {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.7rem;
+  font-size: 1.1rem;
+  color: var(--ink);
+  background: rgba(52,53,62,0.35);
+  padding: 0.1em 0.5em;
+  border-radius: 1em;
+  pointer-events: none;
+}

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — Siestaria</title>
   <meta name="description" content="About Siestaria — what, when and why.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,23 +14,22 @@
 
     <div class="top">
       <h1 class="title"><a href="index.html">Siestaria</a></h1>
-      <nav class="nav">
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="https://drive.google.com/drive/folders/1nQkKx8XwaXW-eYDv5Q3-4FoZp7vA3xDc" target="_blank" rel="noopener">Portfolio</a>
-      </nav>
     </div>
 
     <!-- ===== PESTAÑAS =====
-         Cada botón abre una sección. La que está activa se ve sólida;
-         las demás, tenues. No hace falta tocar nada de esto para editar
-         textos: el texto de cada pestaña está más abajo, en su <section>. -->
+         Sources y Related Projects van a la izquierda; What?/When?/Why? a la
+         derecha. La pestaña activa se ve sólida; las demás, tenues. El texto de
+         cada una está más abajo, en su <section>. -->
     <div class="tabs">
-      <button class="tab-btn active" data-target="what">What?</button>
-      <button class="tab-btn" data-target="when">When?</button>
-      <button class="tab-btn" data-target="why">Why?</button>
-      <button class="tab-btn" data-target="sources">Sources</button>
-      <button class="tab-btn" data-target="related">Related Projects</button>
+      <div class="tabs-left">
+        <button class="tab-btn" data-target="sources">Sources</button>
+        <button class="tab-btn" data-target="related">Related Projects</button>
+      </div>
+      <div class="tabs-right">
+        <button class="tab-btn active" data-target="what">What?</button>
+        <button class="tab-btn" data-target="when">When?</button>
+        <button class="tab-btn" data-target="why">Why?</button>
+      </div>
     </div>
 
     <!-- ===================== CONTENIDO DE CADA PESTAÑA ===================== -->
