@@ -113,21 +113,28 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 :root { --tab-size: clamp(1.7rem, 5vw, 3.4rem); }
 
 /* =======================================================================
-   ABOUT — dos columnas con desplegables (acordeón).
-   What / When / Why a la izquierda (bajo el título); Sources / Related a la
-   derecha. Cada título se abre al hacer clic; el + pasa a –.
+   ABOUT — grilla de dos columnas con desplegables (acordeón).
+   Sources se alinea con What?; Related Projects con When?.
    ===================================================================== */
+/* Título a todo el ancho, arriba de las dos columnas */
+.about-title { margin: 0 0 1.5rem; }
+
 .about-cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem 3rem;
+  column-gap: 3rem;
+  row-gap: 0.5rem;
   align-items: start;
-  margin-top: 0.5rem;
 }
-.col-left .title { margin: 0 0 1.5rem; }
-.col-right { text-align: right; }
-
-.acc { margin-bottom: 0.5rem; }
+/* Izquierda: What / When / Why (uno debajo del otro).
+   Derecha: Sources (junto a What) y Related Projects (junto a When). */
+.p-what    { grid-column: 1; grid-row: 1; }
+.p-when    { grid-column: 1; grid-row: 2; }
+.p-why     { grid-column: 1; grid-row: 3; }
+.p-sources { grid-column: 2; grid-row: 1; }
+.p-related { grid-column: 2; grid-row: 2; }
+/* La columna derecha, alineada al margen derecho */
+.p-sources, .p-related { text-align: right; }
 
 .acc-head {
   font-family: inherit;
@@ -140,17 +147,9 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   border: 0;
   padding: 0;
   cursor: var(--cursor);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  text-align: left;
+  transition: opacity 0.15s ease;
 }
-.acc-mark {
-  display: inline-block;
-  font-size: 0.5em;
-  transition: transform 0.2s ease;
-}
-.acc.open .acc-mark { transform: rotate(90deg); }  /* flechita: derecha → abajo */
+.acc-head:hover { opacity: 0.6; }   /* mismo efecto que el menú de inicio */
 
 .acc-body {
   display: none;
@@ -168,9 +167,13 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .entry .quote { display: block; margin-top: 0.3em; }
 
 @media (max-width: 700px) {
-  /* En móvil, una sola columna: What/When/Why y luego Sources/Related. */
+  /* En móvil, una sola columna en orden: What, When, Why, Sources, Related. */
   .about-cols { grid-template-columns: 1fr; }
-  .col-right { text-align: left; }
+  .p-what    { grid-column: 1; grid-row: 1; }
+  .p-when    { grid-column: 1; grid-row: 2; }
+  .p-why     { grid-column: 1; grid-row: 3; }
+  .p-sources { grid-column: 1; grid-row: 4; text-align: left; }
+  .p-related { grid-column: 1; grid-row: 5; text-align: left; }
 }
 
 /* =======================================================================
